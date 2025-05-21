@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Seize Energy</title>
+  <style>
+    /* Enable smooth scrolling when using anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .carousel-track {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .concept-title {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .concept-title h2 {
+      font-size: 2rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px solid #ffffff;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin: 0;
+    }
+
+    main {
+      text-align: center;
+      padding: 40px 20px 60px;
+    }
+
+    .carousel-slide img {
+      max-width: 75%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .carousel {
+      margin: 60px auto;
+      max-width: 600px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-track-container {
+      overflow: hidden;
+      position: relative;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      transition: opacity 0.4s ease-in-out;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: none;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      z-index: 10;
+      border-radius: 2px;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    .carousel-btn:hover {
+      background: linear-gradient(to right, #bf00ff, #ffffff);
+      color: #000;
+    }
+
+    .seize-header-img {
+      height: 70px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .site-title {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .logo-wrapper {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="toggleSidebar()">×</div>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>  <!-- now links to products.html -->
+    <a href="socials.html">Socials</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="site-title-wrapper">
+      <h1 class="site-title">
+        <img src="Seizeheader.jpg" alt="Seize Energy Banner Logo" class="seize-header-img" />
+      </h1>
+    </div>
+    <div class="logo-wrapper">
+      <img src="seizelogo.png" alt="Seize Lightning Logo" class="logo-image" />
+    </div>
+  </header>
+
+  <!-- Products / Concept Cans Title -->
+  <section id="products" class="concept-title">
+    <h2>Concept Cans</h2>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Carousel -->
+    <section class="carousel">
+      <div class="carousel-track-container">
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+        <ul class="carousel-track" id="carouselTrack">
+          <li class="carousel-slide"><img src="Cherry limeade.png" alt="Cherry Limeade Can" /></li>
+          <li class="carousel-slide"><img src="Orange dragonfruit.png" alt="Orange Dragonfruit Can" /></li>
+          <li class="carousel-slide"><img src="Peach rings.png" alt="Peach Rings Can" /></li>
+          <li class="carousel-slide"><img src="Pineapple Guava.png" alt="Pineapple Guava Can" /></li>
+        </ul>
+        <button class="carousel-btn next" onclick="moveSlide(1)">❯</button>
+      </div>
+    </section>
+
+    <!-- Tagline -->
+    <section class="tagline">
+      <p>Energy that doesn't know how to quit.</p>
+    </section>
+
+    <!-- Ethos -->
+    <h2>Ethos</h2>
+
+    <!-- Product Highlights -->
+    <section class="highlights">
+      <div class="highlight">Zero Crash</div>
+      <div class="highlight">200MG Caffeine</div>
+      <div class="highlight">Zero Sugar</div>
+      <div class="highlight">Vegan Friendly</div>
+    </section>
+
+    <!-- Flavor Lineup -->
+    <section class="flavors">
+      <h2>Flavors</h2>
+      <div class="flavor-grid">
+        <div class="flavor-card pineapple-guava">Pineapple Guava</div>
+        <div class="flavor-card orange-dragonfruit">Orange Dragonfruit</div>
+        <div class="flavor-card cherry-limeade">Cherry Limeade</div>
+        <div class="flavor-card peach-rings">Peach Rings</div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison">
+      <h2>What Makes Us Different</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Seize Energy</th>
+            <th>Ryse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Crash-Free</td><td>✅</td><td>❌</td></tr>
+          <tr><td>Clean Ingredients</td><td>✅</td><td>✅</td></tr>
+          <tr><td>Empowering Brand</td><td>✅</td><td>❌</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Socials Section -->
+    <section class="socials">
+      <h2>Follow Us</h2>
+      <div class="social-links">
+        <a href="https://instagram.com/seize.energy" target="_blank">Instagram</a>
+        <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+        <a href="https://tiktok.com/@yourhandle" target="_blank">TikTok</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Popup Modal -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="popup-close" onclick="closePopup()">×</span>
+      <h2>Ready to Seize Control?</h2>
+      <p>Be the first to know when we launch. Drop your email below and join the movement.</p>
+      <input type="email" placeholder="Your email" class="popup-input" />
+      <button onclick="closePopup()">Notify Me</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    window.addEventListener("load", function () {
+      document.getElementById("popup").style.display = "flex";
+    });
+
+    // Carousel Logic
+    let currentSlide = 0;
+
+    function moveSlide(direction) {
+      const track = document.getElementById('carouselTrack');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const totalSlides = slides.length;
+
+      currentSlide += direction;
+
+      if (currentSlide < 0) currentSlide = totalSlides - 1;
+      if (currentSlide >= totalSlides) currentSlide = 0;
+
+      const slideWidth = slides[0].offsetWidth;
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    window.addEventListener("resize", () => moveSlide(0));
+  </script>
+</body>
+</html>
