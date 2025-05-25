@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Seize Energy</title>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="toggleSidebar()">×</div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="socials.html">Socials</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="site-title-wrapper">
+      <h1 class="site-title">
+        <img src="Seizeheader.png" alt="Seize Energy Banner Logo" class="seize-header-img" />
+      </h1>
+    </div>
+    <div class="logo-wrapper">
+      <img src="seizelogo.png" alt="Seize Lightning Logo" class="logo-image" />
+    </div>
+  </header>
+
+  <!-- Products / Concept Cans Title -->
+  <section id="products" class="concept-title">
+    <h2>Concept</h2>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Carousel -->
+    <section class="carousel">
+      <div class="carousel-track-container">
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+        <ul class="carousel-track" id="carouselTrack">
+          <li class="carousel-slide"><img src="cherry-limeade.png" alt="Cherry Limeade Can" /></li>
+          <li class="carousel-slide"><img src="orange-dragonfruit.png" alt="Orange Dragonfruit Can" /></li>
+          <li class="carousel-slide"><img src="peach-rings.png" alt="Peach Rings Can" /></li>
+          <li class="carousel-slide"><img src="pineapple-guava.png" alt="Pineapple Guava Can" /></li>
+        </ul>
+        <button class="carousel-btn next" onclick="moveSlide(1)">❯</button>
+      </div>
+    </section>
+
+    <!-- Tagline -->
+    <section class="tagline">
+      <p>Energy that doesn't know how to quit.</p>
+    </section>
+
+    <!-- Ethos -->
+    <h2>Standards</h2>
+
+    <!-- Product Highlights -->
+    <section class="highlights">
+      <div class="highlight">Zero Crash</div>
+      <div class="highlight">200MG Caffeine</div>
+      <div class="highlight">Zero Sugar</div>
+      <div class="highlight">Vegan Friendly</div>
+    </section>
+
+    <!-- Flavor Lineup -->
+    <section class="flavors">
+      <h2>Flavors</h2>
+      <div class="flavor-grid">
+        <a href="pineappleguava.html" class="flavor-card pineapple-guava">Pineapple Guava</a>
+        <a href="orange-dragonfruit.html" class="flavor-card orange-dragonfruit">Orange Dragonfruit</a>
+        <a href="cherry-limeade.html" class="flavor-card cherry-limeade">Cherry Limeade</a>
+        <a href="peach-rings.html" class="flavor-card peach-rings">Peach Rings</a>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison">
+      <h2>What Makes Us Different</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Seize Energy</th>
+            <th>Celsius</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Crash-Free</td><td>✅</td><td>❌</td></tr>
+          <tr><td>Clean Ingredients</td><td>✅</td><td>✅</td></tr>
+          <tr><td>Empowering Brand</td><td>✅</td><td>❌</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Socials Section -->
+    <section class="socials">
+      <h2>Follow Us</h2>
+      <div class="social-links">
+        <a href="https://instagram.com/seize.energy" target="_blank">Instagram</a>
+        <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+        <a href="https://tiktok.com/@yourhandle" target="_blank">TikTok</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Popup Modal -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="popup-close" onclick="closePopup()">×</span>
+      <h2>Ready to Seize Control?</h2>
+      <p>Be the first to know when we launch. Drop your email below and join the movement.</p>
+      <input type="email" placeholder="Your email" class="popup-input" />
+      <button onclick="closePopup()">Notify Me</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+    window.addEventListener('load', () => {
+      document.getElementById('popup').style.display = 'flex';
+    });
+
+    // Carousel Logic
+    let currentSlide = 0;
+    function moveSlide(direction) {
+      const track = document.getElementById('carouselTrack');
+      const slides = document.querySelectorAll('.carousel-slide');
+      currentSlide = (currentSlide + direction + slides.length) % slides.length;
+      track.style.transform = `translateX(-${slides[0].offsetWidth * currentSlide}px)`;
+    }
+    window.addEventListener('resize', () => moveSlide(0));
+  </script>
+</body>
+</html>

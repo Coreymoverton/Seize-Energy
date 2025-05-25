@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Seize Energy – Cherry Limeade</title>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="toggleSidebar()">×</div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="socials.html">Socials</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="site-title-wrapper">
+      <img src="Seizeheader.png"
+           alt="Seize Energy Banner Logo"
+           class="seize-header-img" />
+    </div>
+    <div class="logo-wrapper">
+      <img src="seizelogo.png"
+           alt="Seize Lightning Logo"
+           class="logo-image" />
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="concept-title">
+    <h2>Cherry Limeade</h2>
+  </section>
+
+  <!-- Product Detail -->
+  <main>
+    <section class="product-detail">
+      <img src="cherry-limeade.png" alt="Cherry Limeade Can" class="product-img" />
+      <h3>Cherry Limeade</h3>
+      <p class="description">
+        Sweet cherries meet zesty lime in this refreshing flavor you know and love, while keeping you energized at the same time.
+      </p>
+      <p class="price">$2.49</p>
+      <a href="https://yourstore.com/cherry-limeade" class="buy-btn cherry-btn" target="_blank">
+        Buy Now
+      </a>
+    </section>
+  </main>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const body = document.body;
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      body.classList.toggle('sidebar-open');
+    }
+  </script>
+</body>
+</html>

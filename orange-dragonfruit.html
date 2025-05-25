@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Seize Energy – Orange Dragonfruit</title>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="toggleSidebar()">×</div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="socials.html">Socials</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="site-title-wrapper">
+      <img
+        src="Seizeheader.png"
+        alt="Seize Energy Banner Logo"
+        class="seize-header-img"
+      />
+    </div>
+    <div class="logo-wrapper">
+      <img
+        src="seizelogo.png"
+        alt="Seize Lightning Logo"
+        class="logo-image"
+      />
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="concept-title">
+    <h2>Orange Dragonfruit</h2>
+  </section>
+
+  <!-- Product Detail -->
+  <main>
+    <section class="product-detail">
+      <img src="orange-dragonfruit.png" alt="Orange Dragonfruit Can" class="product-img" />
+      <h3>Orange Dragonfruit</h3>
+      <p class="description">
+        A bold fusion of tangy orange and exotic dragonfruit that delivers a unique flavor like no other, whilst giving you unmatched energy.
+      </p>
+      <p class="price">$2.49</p>
+      <a href="https://yourstore.com/orange-dragonfruit" class="buy-btn orange-btn" target="_blank">
+        Buy Now
+      </a>
+    </section>
+  </main>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const body = document.body;
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      body.classList.toggle('sidebar-open');
+    }
+  </script>
+</body>
+</html>

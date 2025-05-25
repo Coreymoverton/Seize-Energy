@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Seize Energy – Products</title>
+ 
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="toggleSidebar()">×</div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="socials.html">Socials</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="site-title-wrapper">
+      <img
+        src="Seizeheader.png"
+        alt="Seize Energy Banner Logo"
+        class="seize-header-img"
+      />
+    </div>
+    <div class="logo-wrapper">
+      <img
+        src="seizelogo.png"
+        alt="Seize Lightning Logo"
+        class="logo-image"
+      />
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="concept-title">
+    <h2>Our Products</h2>
+  </section>
+
+  <!-- Products Grid -->
+  <main>
+    <section class="flavors">
+      <div class="flavor-grid">
+        <a href="pineappleguava.html" class="flavor-card pineapple-guava">
+          <img src="pineapple-guava.png" alt="Pineapple Guava Can" />
+          <p>Pineapple Guava</p>
+        </a>
+        <a href="orange-dragonfruit.html" class="flavor-card orange-dragonfruit">
+          <img src="orange-dragonfruit.png" alt="Orange Dragonfruit Can" />
+          <p>Orange Dragonfruit</p>
+        </a>
+        <a href="cherry-limeade.html" class="flavor-card cherry-limeade">
+          <img src="cherry-limeade.png" alt="Cherry Limeade Can" />
+          <p>Cherry Limeade</p>
+        </a>
+        <a href="peach-rings.html" class="flavor-card peach-rings">
+          <img src="peach-rings.png" alt="Peach Rings Can" />
+          <p>Peach Rings</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
